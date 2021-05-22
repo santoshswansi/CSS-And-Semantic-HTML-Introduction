@@ -1,0 +1,50 @@
+
+/* Text and Font decoration */
+.header{
+    /* uppercase, lowercase, justify */
+    text-transform: capitalize;
+
+    /* center, right, left,  */
+    text-align: center; 
+}
+
+.topic{
+    font-size: 1.5rem;
+
+    /* 100-900 */
+    font-weight: 500;
+
+    /* underline, line-through, overline, none */
+    text-decoration: underline;
+    
+    text-align: left;
+
+    /* For indenting the first word of a line */
+    text-indent: 2%;
+}
+
+.topic, .header{
+    font-family: 'Oswald', sans-serif;
+}
+
+.desc{
+    font-family: 'Montserrat', sans-serif;
+
+    /* For streamlined content*/
+    text-align: justify; 
+
+    /* For space between letters*/
+    letter-spacing: 1.2px;  
+
+    /* For space between words */
+    word-spacing: 4px;
+
+    /* For space between line*/
+    line-height: 25px; 
+}
+
+.institute{
+
+    /*  italic, oblique, normal*/
+    font-style: italic;  
+}

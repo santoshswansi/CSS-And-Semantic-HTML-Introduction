@@ -1,0 +1,115 @@
+/*
+    Gradient is a transition of color from one to other to ...
+
+    Types: 
+        1. Linear Gradient 
+            Color transition is linear
+
+        SYNTAX:
+
+        linear-gradient(direction, 
+                        color1 (size),
+                        color2 (size),
+                        ...)
+
+        Directions: 
+            to (left, right, top, bottom, top right, 90deg)  
+    
+
+        2. Radial Gradient 
+            Color transition is oval(default), circular
+
+        SYNTAX:
+
+        radial-gradient(color1 (size1), ...)
+*/
+
+h1, p{
+    color: grey;    
+}
+
+body{
+    background-color: aquamarine;
+}
+
+p{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+div[class$="flag"], div[class^="pattern"]{
+    width: 25%;
+    height: 200px;
+}
+
+
+.pattern-1{
+
+    background-image: linear-gradient(to top right, blue 20%, red);
+}
+
+.italy-flag{
+
+    /* calc() returns a value which can be used as a value*/
+    /* color start end */
+    /* size specifies where it should end and tarnsit to 
+        another color*/
+    background-image: 
+        linear-gradient(to right,
+         #009246 0 calc(100% / 3),
+         white calc(100% / 3) calc((100%/3)*2),
+         #CE2B37 calc((100% / 3) * 2) calc((100% / 3) * 3)
+        );
+}
+
+.mauritius-flag{
+    background-image: linear-gradient(to bottom,
+     #EA2839 0 25%, 
+     #1A206D 25% 50%,
+     #FFD500 50% 75%,
+     #00A551 75% 100%
+    );
+}
+
+.tanzania-flag{
+  background-image: 
+    linear-gradient(145deg, 
+        #1EB53A 0 40%,
+        #FCD116 40% 43%,
+        #000000 43% 57%,
+        #FCD116 57% 60%, 
+        #00A3DD 60% 100%
+    );
+}
+
+
+.japan-flag{
+  background-image: 
+    radial-gradient(
+        circle,
+        #BC002D 20%,
+        #FFFFFF 20%,
+        #FFFFFF
+    );
+}
+
+/* repeating-linear-gardient */
+.pattern-2{
+    background-image: 
+        repeating-linear-gradient(
+            145deg,
+            #a799b7  0 20px,
+            #542e71 20px 40px  
+        );
+}
+
+/* repeating-radial-gradient */
+.pattern-3{
+    background-image: 
+        repeating-radial-gradient(
+            #f8a488 0 20px,
+            #5aa897 20px 40px
+        );
+}
+
+

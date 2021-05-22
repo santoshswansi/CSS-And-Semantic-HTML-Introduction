@@ -1,0 +1,207 @@
+/*
+    CSS Flexbox: 
+
+        > Parent Element : "flex container"
+        > Child Elements : "flex items"
+
+        > Items will be laid out :- 
+                    i. "main axis" (from "main-start" to 
+                                    "main-end")
+                    ii. "cross axis" (from "cross-start" to 
+                                    "cross-end")
+
+    TERMS RELATED TO FLEXBOX: 
+
+    i. "main axis" 
+            > primary axis along which flex items are laid out 
+            > NOTE: It is not necessarily horizontal; depends 
+                    on "flex-direction" property 
+            
+            > "main-start" & "main-end" --->
+              flex items are placed in the container starting 
+              from "main-start" and "main-end" 
+
+            > "main size" ---> 
+                flex item's width or height whichever in the 
+                main direction 
+
+    ii. "cross axis" 
+        > axis perpendicular to the main axis 
+        > NOTE: It is not necessarily vertical; depends 
+                on "flex-direction" property 
+        
+        > "cross-start" & "cross-end" --->
+            Flex items are placed into the container starting
+            on the cross-start side and going toward the
+            cross-end side
+        
+        > "cross size" ---> 
+            flex item's width or height whichever in the 
+            cross direction 
+*/
+
+body{
+    background-color: aqua;
+    color: black;
+}
+
+
+/* FLEX CONTAINER */
+.container{
+
+    /* Flex Container */
+    display: flex; 
+
+    /* 
+        TO DEFINE MAIN AXIS DIRECTION:
+            row(ltr), row-reverse(rtl), column(top to bottom)
+            column-reverse(bottom to top)
+    */
+    flex-direction: row;
+
+    /* 
+        DEFAULT: "flex items" try to fit them into one line 
+    
+        > We can change that: flex-wrap: wrap;
+        > wrap-reverse:
+             "flex items" will wrap into multiple lines from 
+              bottom to top  (reverse of wrap)       
+    */
+    /* flex-wrap: wrap; */
+
+    /* 
+        Two properties of "flex-direction" & "flex-wrap" 
+        can be set using "flex-flow"
+        
+        flex-flow: flex-direction flex-wrap; 
+    */
+
+    /* 
+        justify-content 
+            > Only works when there is free space left 
+              after flex items have flexed
+            > It defines the alignment along the main axis
+            > It helps distribute extra free space leftover
+    
+        space-around, space-between, space-evenly, flex-start,
+        flex-end, center
+    */
+    /* justify-content: space-around; */
+
+    /*
+        align-items:
+            > What "justify-content" is for "main axis", 
+             "align-items" is for "cross axis"
+             
+            > It defines the default behavior for how items 
+              are laid along "cross axis"
+
+            > Values: 
+                stretch(default)
+                flex-start, start, self-start
+                flex-end, end, self-end
+                center : Items are centered along cross axis
+                baseline : Items are aligned such as their 
+                            baseline align
+
+    */
+    /* align-items: center; */
+    
+    /*
+        align-content: 
+            This property has a effect only on multi-line 
+            flexible containers, where "flex-flow"  is 
+            set to "wrap" or "wrap-reverse" 
+
+        > normal(default)
+        > flex-start ---> Items packed at the start of the 
+                          container 
+
+                        It honors the "flex-direction"
+        > start --->  It honors the "writing-mode"
+
+        > flex-end, end, center, space-between, stretch, 
+          space-evenly
+    */
+    /* align-content: space-between; */
+}   
+
+
+
+/* FLEX ITEMS */
+/*
+    FLEX PROPERTIES FOR FLEX ITEMS: 
+        1. order 
+            > Default: source order 
+            > It controls the order in which they appear in 
+              flex container
+    
+        2. flex-grow
+            > Default: 0
+            > This defines the ability for a flex item to
+              grow if necessary
+            > NOTE: flex-basis must be specified on all  
+                    items in-order to get it work
+
+                    OR 
+
+                    Remaining space must be there in-order 
+                    to grow the items by using free spaces
+
+        3. flex-shrink 
+            > Default: 1
+            > This defines the ability for a flex item to 
+              shrink if necessary
+
+        4. flex-basis 
+            > It defines the default size of the flex items 
+            > It can be a length or keyword
+
+            > Keywords:- 
+                > auto ---> "look at my width & height 
+                              property"
+                
+                > max-content, min-content, fit-content --> 
+                        Size based on item content(not well 
+                         supported)
+
+
+        5. flex 
+            > SYNTAX: 
+                flex: flex-grow, flex-shrink, flex-basis;
+
+            > Preferred over previous ones 
+
+
+        6. align-self 
+            > This allow us to override default alignment 
+              set by "align-items" 
+
+            > flex-start, flex-end, center, baseline, stretch
+*/
+
+
+div[class$='child']{
+    color: white;
+    letter-spacing: 2px;
+    line-height: 22px;
+    font-size: 1.2em;
+    padding: 2em;
+    text-align: center;
+}
+
+
+/* To make all flex-items of equal width */
+.container > div{
+    width: 100%;
+}
+
+/* Every odd child of .container colored same */
+div[class$='child']:nth-child(odd){
+    background-color: #c1c4c3   ;
+}
+
+/* Every even child of .container colored same */
+div[class$='child']:nth-child(even){
+    background-color: #8f9190;
+}

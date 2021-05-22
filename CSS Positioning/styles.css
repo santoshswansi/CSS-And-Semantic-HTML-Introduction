@@ -1,0 +1,84 @@
+/*
+    Positioning: 
+
+        1. static 
+            > Default value
+            > Elements render in order, as they appear in 
+              document flow
+        
+        2. absolute 
+            > Element is positioned relative to body
+            > It sets the element out of the natural document 
+              flow
+
+        3. fixed 
+            > Position relative to browser window 
+            > Fixed at particular position of viewport 
+
+        4. relative 
+            > Position relative to normal position
+            > But we can apply top, right,... (Not used 
+                for this purpose)
+            > It is mainly used to position child element 
+              absolute in a relatively positioned element
+              
+        5. sticky 
+            > Position based on user's scroll position
+            > Toggle between "relative" and "fixed"
+            > Specify at-least one ( top, bottom, left,
+              right ) for "sticky" positioning to work
+        
+        6. inherit 
+            > Inherits this property from its parent element
+
+*/
+
+body{
+    color: #FFFFFF;
+    background-color: #810000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.parent{
+
+    /*
+        It is useful to position absolutely positioned 
+        element relative to it
+    */
+    position: relative;
+    height: 200vh;
+    width: 50%;
+    background-color: #d8f8b7;
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+
+.absolute-relative-top-right{
+    background-color: #fb3640;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sticky{
+    background-color: #194350;
+
+    position: sticky;
+    top: 0;
+}
+
+.fixed{
+    background-color: #206a5d;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+

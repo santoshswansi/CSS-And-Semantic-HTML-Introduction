@@ -1,0 +1,37 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+
+    /*
+    grid-auto-flow:  
+        > It can be used to specify where a new grid item 
+         should be placed 
+
+        > It follows source order independence { However, the 
+          order of elements, it will be able to fill the gap 
+          with new item, if it fit into it }  
+
+
+        DEFAULT: row (looks for the row to place item) 
+                 dense (Uses dense algorithm to place items 
+                        at the vacant place if the item can 
+                        fit )
+    */
+
+    grid-gap: 5px;
+}
+
+.horizontal {
+    grid-column: span 2;
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big{
+    grid-row: span 2;
+    grid-column: span 2;
+}

@@ -1,0 +1,255 @@
+/*
+    GRID TERMINOLOGY
+        
+    1. Grid Container 
+        > Element in which "display: grid" is applied 
+        > It is the direct parent of all grid items 
+
+    2. Grid Item 
+        > Elements which are direct descendants of 
+          grid container 
+
+    3. Grid Line 
+        > Lines which reside on either sides of row(row grid
+          line) or column(column grid line) 
+
+    4. Grid Cell
+        > The space between two consecutive "column grid 
+          lines" and "row grid lines"
+
+    5. Grid Track
+        > They can be thought as the particular row or 
+          column space 
+
+    6. Grid Area 
+        > The total space between four grid lines 
+        > There may be multiple grid cells in a grid area
+*/
+
+
+/*
+    GRID PROPERTIES
+
+    I. Container Properties 
+
+        #   grid-template-columns 
+               > To specify columns size(s)
+
+        #   grid-template-rows
+                > To specify rows size(s)
+
+        #   grid-gap 
+                > Gap between grid items 
+
+        # grid-template-area 
+                > To specify named grid areas   
+*/
+
+
+.parent-container{
+    display: grid;
+    
+    
+    /* 
+    // auto will make the middle column flexible 
+
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 30px 50px; 
+    */
+
+
+    /*
+    // fr is relative units
+    
+    grid-template-columns: 1fr 2fr 1fr; 
+    */
+    
+    /*
+    // repeat(n, unit) ---> repeating unit n times  
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 50px); 
+    */
+
+    /* Shortcut  Row / Column */
+    grid-template: repeat(4, 50px) / repeat(3, 1fr);
+
+    grid-gap: 3px;
+}
+
+
+
+/*
+    II Grid Items Properties 
+
+        # grid-column-start/ grid-row-start: 
+            > To specify column/row grid line from which grid 
+              item should start 
+        
+        # grid-column-end/ grid-row-end: 
+            > To specifying end grid column/row line
+
+        SHORTHAND 
+            grid-column: grid-column-start/ grid-column-end;
+            grid-row: grid-row-start/ grid-row-end;
+
+        
+        # grid-area 
+            > It specifies a grid item’s size and location
+              within a grid 
+            > It is a shorthand property for the following
+              properties:
+
+                * grid-row-start
+                * grid-column-start
+                * grid-row-end
+                * grid-column-end
+
+            > The grid-area property can also be used to 
+              assign a name to a grid item
+
+            SYNTAX
+                grid-area: 
+                    grid-row-start /
+                    grid-column-start /
+                    grid-row-end / 
+                    grid-column-end 
+                    | itemname;
+
+
+*/
+
+
+.parent-website-layout{
+
+
+    /* 
+    For flexible layout:
+    height: 100%; 
+
+    Along With:
+        grid-template-rows: 50px auto 50px;
+    */
+
+
+    /* 
+    Named Lines
+        We can name a grid line, using which we can place 
+        a item to start/end at particular named line
+
+        EXAMPLE 
+
+         .parent-container {
+            display: grid;
+            grid-template-columns: [main-start] 100px [main-end] 200px;
+            grid-template-rows: [menu-start] 100px [menu-end] 200px;
+
+         }
+
+         .main{
+            grid-column: main-start/ main-end;
+                  OR 
+
+            grid-column: main;
+         }
+
+         NAMED LINE & GRID AREA 
+            > If the grid item is covered around by four 
+              named lines: 
+                We can use grid-area to place the item in 
+                the place which is being surrounded by 
+                four named lines
+    */
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* for more flexibility */
+    grid-template-rows: 50px 200px 50px;  
+    grid-template-areas: 
+        "h h h h h h h h h h h m"
+        "c c c c c c c c c c c m"
+        "f f f f f f f f f f f f";
+    
+    grid-gap: 3px;
+}
+
+
+.header{
+    /*
+    // start at 1, end at 3
+    
+    grid-column-start: 1;
+    grid-column-end: 3; 
+
+    // shortcut
+    grid-column: 1/3;
+
+    // span 2 columns
+    grid-column: 1/ span 2;
+
+    */
+
+    /* More valid  */
+    /* grid-column: 1/-2; */
+
+    grid-area: h;
+}
+
+.menu{
+    /* grid-row: 1/ -2;
+    grid-column: -2/-1; */
+
+    grid-area: m;
+}
+
+.content{
+    /* grid-column: 1/ -2; */
+
+    grid-area: c;
+}
+
+.footer{
+    /* grid-column: 1/-1; */
+
+    grid-area: f;
+}
+
+/* Perfect Centering  */
+.center-grid-container{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-auto-rows: 100px;
+
+    /* 
+    Values accepted by justify-content & align-content:
+        center, space between, space around,
+         space evenly, start, end
+    */
+    justify-content: center;  /* horizontal align */
+    align-content: center;  /* vertical align */
+
+    /* 
+    Similarly, we can use 
+        # justify-items
+            > It defines the default justify-self for all
+              items of the box, giving them all a default 
+              way of justifying each box along the 
+              appropriate axis
+
+        # align-items 
+            >  In Grid Layout, it controls the alignment of
+             items on the Block Axis within their grid area
+
+    */
+}
+
+
+/* 
+    auto-fit VS auto-fill 
+        > The difference between auto-fill and auto-fit for
+          sizing columns is only noticeable when the row
+          is wide enough to fit more columns in it
+
+        > If you're using auto-fit , the content will stretch
+          to fill the entire row width (not in the case of 
+          auto-fill)
+*/

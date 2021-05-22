@@ -1,0 +1,88 @@
+/*
+    CSS Box Model:
+        It is a box which wraps around html content, padding,
+        border and margin
+
+    Content: Content of the box, where text and images appear
+    Padding: Space between the content and border (Transparent)
+    Border: Space that goes around padding and content
+    Margin: space which separates HTML element from other 
+    nearby elements. (Transparent)
+*/
+
+body{
+    background-color: #114e60;
+    color: #f4eee8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.desc{
+    background-color: #325288;
+    text-align: justify;
+
+    /* Changing content box size*/
+    width: 200px;
+
+    /* 
+        Changing Padding:
+            padding-top, padding-bottom, ....
+            padding: top right bottom left;
+            padding : top left/right bottom
+            padding: top/bottom left/right
+    */
+    padding: 20px;
+
+    /*
+        Changing Border: 
+          border-width, border-style, border-color
+          border-top-width, border-top-style, border-top-color 
+          border: width style color;
+          border-top: width style color;
+
+          border-style: (solid/dotted/double/...);
+    */
+    
+    border: 10px double #FFFFFF;
+
+
+    /*
+       Margin: 
+            margin-top, margin-bottom, ....
+            margin: top right bottom left;
+            margin : top left/right bottom
+            margin: top/bottom left/right
+    */
+
+    margin: 10px 20px;
+}
+
+/*
+    Outline: 
+        > It is a line drawn outside element's border
+        > It can overlap other element 
+        > It does not contribute to element's height and width  
+        
+    outline-style, outline-width, outline-color
+    outline: width style color; 
+
+    Outline Offset: 
+        It sets space between outline and border of an element
+    
+*/
+
+.box-outline{
+    border: 3px solid white;
+    outline: 5px solid black;
+
+    /* Ignore */
+    padding: 10px;
+}
+
+.box-outline-offset{
+    border: 3px solid white;
+    outline: 5px solid black;
+    outline-offset: 10px;
+
+    /* Ignore */
+    margin: 30px 10px;
+}

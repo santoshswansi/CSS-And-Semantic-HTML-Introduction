@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>CSS Custom Variables</title>
+</head>
+<body>
+    <h1 class="header">CSS Variables</h1>
+
+    <div class="container">
+        <div class="item">
+            <h1>Hello World</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit facilis atque, animi quam aperiam, a adipisci laborum alias, magni deserunt. Exercitationem nam doloribus unde? Nulla, sint amet. Sit, animi minus autem velit id, molestias sint vel harum quaerat quae esse repellat consectetur. Vel corrupti repellat eveniet, sint unde corporis?</p>
+        </div>
+        <div class="item">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit facilis atque, animi quam aperiam, a adipisci laborum alias, magni deserunt. Exercitationem nam doloribus unde? Nulla, sint amet. Sit, animi minus autem velit id, molestias sint vel harum quaerat quae esse repellat consectetur. Vel corrupti repellat eveniet, sint unde corporis?</p>
+        </div>
+        <div class="item">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit facilis atque, animi quam aperiam, a adipisci laborum alias, magni deserunt. Exercitationem nam doloribus unde? Nulla, sint amet. Sit, animi minus autem velit id, molestias sint vel harum quaerat quae esse repellat consectetur. Vel corrupti repellat eveniet, sint unde corporis?</p>
+        </div>
+        <div class="item">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit facilis atque, animi quam aperiam, a adipisci laborum alias, magni deserunt. Exercitationem nam doloribus unde? Nulla, sint amet. Sit, animi minus autem velit id, molestias sint vel harum quaerat quae esse repellat consectetur. Vel corrupti repellat eveniet, sint unde corporis?</p>
+        </div>
+        <div class="item">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit facilis atque, animi quam aperiam, a adipisci laborum alias, magni deserunt. Exercitationem nam doloribus unde? Nulla, sint amet. Sit, animi minus autem velit id, molestias sint vel harum quaerat quae esse repellat consectetur. Vel corrupti repellat eveniet, sint unde corporis?</p>
+        </div>
+        <div class="item">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit facilis atque, animi quam aperiam, a adipisci laborum alias, magni deserunt. Exercitationem nam doloribus unde? Nulla, sint amet. Sit, animi minus autem velit id, molestias sint vel harum quaerat quae esse repellat consectetur. Vel corrupti repellat eveniet, sint unde corporis?</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    // using javascript to change secondary background color
+    var body = document.querySelector('body');
+
+    // get the styles associated with the body
+    var style = getComputedStyle(body);
+
+    // get the value of specific property
+    const secondaryBGColor = style.getPropertyValue('--secondary-bg-color');
+    
+    // set the value of specific property
+    body.style.setProperty('--secondary-bg-color', '#364f6b');
+</script>
+</html>

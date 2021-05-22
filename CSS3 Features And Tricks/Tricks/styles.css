@@ -1,0 +1,106 @@
+* {     
+    margin: 0;
+    padding: 0;
+}
+
+
+/* change the background color of selection 
++ color of selected text */
+
+p, a{
+    margin: 10px;
+}
+
+p::selection{
+    background-color: rgb(10, 46, 10);
+    color: white;
+}
+
+
+
+/* Navigate to the section */
+
+html{   
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#home, #main, #contact{
+    margin: 25vh 10px;
+    
+    font-size: 40px;
+    color: rgb(8, 29, 8);
+    font-weight: bold;
+}
+
+
+/* Applying gradient color to text */
+#gradient-header{
+    background: linear-gradient(to right, rgb(248, 130, 149), rgb(78, 255, 78));
+    
+    /* clip the background behind the text*/
+    background-clip: text;
+    -webkit-background-clip: text;   /* For backup */ 
+
+    /* show the color behind the text */
+    -webkit-text-fill-color: transparent;
+
+    /* make the background stretch the width of text */
+    display: inline;
+}
+
+
+/* background-blend-mode */
+#bg-1{   
+    background-image: url(arch.jpg);
+    background-size: 100% 100%;
+    background-color: rgb(231, 3, 193);
+    background-blend-mode: screen;
+
+    height: 100vh;  
+    width: 98.6vw;
+}
+
+/* Different shaped background */
+#bg-2{
+
+    clip-path: polygon(100% 0, 100% 39%, 0 100%, 0 0);
+    background: linear-gradient(to top right, rgb(53, 166, 241), rgb(104, 156, 238));
+
+    margin: auto;
+    height: 100vh;
+    width: 98.6vw;
+}
+
+
+/* min(), max(), clamp() */
+
+.box{
+
+    /* use min width of 400px or 70% */
+    /* NOTE: We can put more than two as well */
+    width: min(400px, 70%);
+
+    /* clamp(min, max, ideal) */
+    font-size: clamp(20px, 5vh, 30px);
+
+    margin: 100px auto;
+    padding: 20px;
+    background: #444;
+    color: white;
+}
+
+
+/* 
+    # FEATURE QUERY
+        We can have fallback styles for the browser which does 
+        not support a specific property
+
+    # SYNTAX
+        @supports (property-name: property-value) {
+            fallback css 
+        }
+*/

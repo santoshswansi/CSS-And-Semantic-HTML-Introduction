@@ -1,0 +1,51 @@
+/*
+    CSS Coloring:
+        
+        1. Color Name
+            Examples: 'red', 'green', 'gray', etc
+
+        2. Hex Code 
+            Syntax: #{00-FF}{00-FF}{00-FF}
+            Examples: 
+                #000000 -> Black
+                #FFFFFF -> White
+
+        3 RGB
+            Syntax: rgb({0-255}, {0-255}, {0-255})
+            Examples: 
+                rgb(0, 0, 0) -> Black
+                rgb(255, 255, 255) -> White
+
+*/
+
+body{
+    /* color = background-color */
+    /* background = background-image */
+    background-color: #b0eacd;
+    background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
+
+    /* 
+        Opacity/Transparency : 0-1 
+
+            1. rgba(R-value, G-value, B-value, a-value)
+            2. opacity: 0-1;
+    */
+    opacity: 0.8;
+}
+
+h1{
+    /* color != background-color */
+    color: #FFFFFF;
+}
+
+#top{
+    height: 500px;
+    width: 80%; 
+
+    /* To avoid repeating image  */
+    background-repeat: no-repeat;
+
+    /* To cover the entire dimension */
+    background-size: cover;
+    background-image: url('./Images/image1.jpg');
+}

@@ -1,0 +1,50 @@
+/*
+    Media Queries: 
+        They help us to style differently for different media 
+        types
+
+    SYNTAX:
+        @media (Media-type: optional)
+         (transition-property: optional) {
+            selector {
+                prop1: value1;
+                prop2: value2;
+                prop3: value3;
+            }
+        }
+
+    Media Types: screen, speech, print, all
+*/
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.content{
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+.image{
+    height: 50vh;
+    width: 30vw;
+}
+
+
+/* Desktop First Development */
+@media (max-width: 660px) {
+
+    .image{
+        width: 70%;
+        margin: 10px 15%;
+    }
+}
+
+@media print {
+    .header{
+        color: aqua;
+    }
+}

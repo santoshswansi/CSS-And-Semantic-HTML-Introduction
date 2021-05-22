@@ -1,0 +1,86 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Define css variables for root element */
+:root{
+
+    --primary-bg-color: white;
+    --secondary-bg-color: #00adb5;
+    --container-width: 95%; 
+    --main-font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    font-size: 2em;
+    background-color: var(--secondary-bg-color);
+    padding: 20px 0;
+    color: rgb(247, 235, 235);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+
+    /* Use the defined variable */
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: var(--main-font-family);
+}
+
+.container{
+    width: var(--container-width);
+    margin: 20px auto;
+    line-height: 1.2;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 20px;
+    
+}
+
+
+/* define variables for the item class element */
+.item{
+    --bg-color: white;
+    --content-padding: 20px; 
+    --header-padding: 10px; 
+    --item-box-shadow-h-offset: 5px;
+    --item-box-shadow-v-offset: 7px;
+    --item-box-shadow-blur: 10px;
+}
+
+.item{
+    /*
+      To override default value, we can do it here 
+    */
+    --bg-color: rgb(247, 242, 242);
+    background: var(--bg-color);
+    box-shadow: var(--item-box-shadow-h-offset) 
+                var(--item-box-shadow-v-offset) 
+                var(--item-box-shadow-blur) 
+                var(--secondary-bg-color);
+
+
+}
+
+.item p{
+    padding: var(--content-padding);
+    color: black;
+
+    /* fallback value for not defined css variable */
+    letter-spacing: var(--content-letter-spacing, 1.2px);
+    word-spacing: var(--content-letter-spacing, 2px);
+    
+}
+
+.item > h1{
+    text-align: center;
+    padding: var(--header-padding);
+    color: var(--secondary-bg-color)
+}

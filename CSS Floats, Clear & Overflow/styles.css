@@ -1,0 +1,112 @@
+/*
+    Float: It specifies how an element should float
+    Clear: It specifies what element can float beside the 
+           cleared element and on which side
+*/
+
+body{
+    background-color: grey;
+    color: white;
+}
+
+img{
+    padding: 0 0 10px 10px;  
+    width: 500px;
+    height: 200px;
+
+    /* left, right, both */
+    float: right;
+}
+
+p{
+    text-align: justify;
+    letter-spacing: 2px;
+    line-height: 22px;
+    font-size: 1.2em;
+}
+
+.box{
+    height: 25vh;
+    width: 15vw;
+
+    margin: 30px 0;
+}
+
+/* Placing elements next to each other */
+.red{
+    background-color: #ff0000;
+    float: left;
+
+}
+
+.green{
+    background-color: green;
+    float: left;
+}
+
+.yellow{
+    background-color: yellow;
+    float: left; 
+}
+
+.orange{
+    background-color: orange;
+    float: left;
+}
+
+
+/* To Demonstrate clear after using float
+
+    > When we apply a float to an element, the element
+      gets taken out of the normal document flow and shifted 
+      to the left or right side of its container
+
+    > Any content next to the float flows -- or wraps --
+      around its left or right side
+
+    > use "clear" to  get back next elements in normal 
+      document flow
+
+*/
+.bottom{
+    clear: left;
+    outline: 2px solid aqua;
+    float:left;
+}
+
+.greeting{
+    clear: left;
+    outline: 1px solid red;
+}
+
+
+/*
+    Overflow:
+        It controls what happens to content that is too big 
+        to fit 
+
+    1. visible 
+            > Default
+            > The content renders outside the  element's box
+    
+    2.  hidden 
+        > Rest of the content will be invisible
+
+    
+    3. scroll 
+        > Scrollbar is added to see the rest of the content
+    
+    4. auto 
+        > Similar to scroll, but it adds scroll-bars only
+          when necessary
+*/
+
+
+/* overflow-x & overflow-y */
+.scroll-content{
+    height: 100px;
+    width: 200px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

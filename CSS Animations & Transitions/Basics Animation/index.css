@@ -1,0 +1,136 @@
+/*
+    Animation in CSS 
+
+    # Performance 
+        > It is a performance intensive work, animating 
+          most properties is a concern, so we should proceed
+          with caution before animating any property 
+        > Combination of properties which can be animated 
+          safely  :- 
+            > transform: translate() 
+            > transform: scale()
+            > transform: rotate()
+            > opacity 
+    
+    # Which properties cannot be animated ?
+        > Example of one of such property : background-image
+*/
+
+
+body{
+    background: #333;
+}
+
+.greeting{
+    padding: 10px;
+
+    font-family: 'Pacifico', cursive;    
+    color: white;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;   
+}
+
+.box{
+    background: rgb(243, 84, 111);
+    height: 100px;
+    width: 100px;
+    position: relative; /* allow us to move the div */
+    
+    /* name the animation */
+    animation-name: circleAnimation;
+
+    /* duration */
+    animation-duration: 4s; 
+
+    /* iteration : any number or infinite */
+    /* animation-iteration-count: 2; */
+
+    /* Delay for x seconds */
+    /* animation-delay: 2s; */
+
+
+    /* direction: 
+        reverse --> reverse direction animation
+        alternate --> alternate b/w normal & reverse
+    */
+    /* animation-direction: alternate; */
+
+    
+    /* 
+    Define timing of animation 
+        ease-in : start slow 
+        ease-out: end slow
+        ease-in-out: start and end slow
+        linear: same speed 
+        ease: default
+    */
+    animation-timing-function: ease-out;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+    /* To not change the last state of animation
+        none: default
+        forwards: retains the last keyframe when animation 
+                  ends 
+        backwards: The animation will apply the values
+                   defined in the first relevant keyframe
+                   as soon as it is applied to the target,
+                   and retain this during the animation-delay
+                   period
+
+        both: forwards + backwards
+    */
+    animation-fill-mode: forwards;
+
+    /* The animation property is a shorthand property for:
+
+        animation-delay
+        animation-direction
+        animation-duration
+        animation-fill-mode
+        animation-iteration-count
+        animation-name
+        animation-play-state
+        animation-timing-function
+
+    */
+
+}
+
+
+/* keyframes can be used to specify the property we want 
+to change and to what state */
+@keyframes circleAnimation{
+    0% { 
+        border-radius: 50% 50% 50% 50%;
+        left: 0px;
+        top: 0px;
+        font-size: 0px;
+    }
+
+    25% { 
+        left: 1170px;
+        top: 0px;
+        font-size: 0;
+    }
+
+    50% { 
+        left: 1170px;
+        top: 500px;
+        font-size: 0px;
+    }
+
+    75% { 
+        left: 0px;
+        top: 500px;
+        font-size: 0px;
+    }
+
+    100% { 
+        border-radius: 50% 50% 50% 50%;
+        left: calc(50vw - 100px);
+        top: calc(50vh - 100px);
+        font-size: 2em;
+    }
+}

@@ -1,0 +1,27 @@
+
+body{
+    background-color: #e1e5ea;
+    margin: 10px;
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > div > img {
+
+    /*
+    We want images to occupy the complete length and width of 
+    the div
+    */
+    height: 100%;
+    width: 100%;
+
+    /* 
+    Specify how an <img> or <video> should be resized to fit
+    its container( maintaining the aspect ratio)
+    */
+    object-fit: cover;
+}

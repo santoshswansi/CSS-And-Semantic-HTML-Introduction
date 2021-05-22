@@ -1,0 +1,166 @@
+body{
+    background-color: #f5f7b2;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.child-container{
+    color: white;
+    font-size: 2em;
+    
+    /* 
+        To align text to the center horizontally as well as 
+        vertically
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.parent-container > div:nth-child(even){
+    background-color: #1cc5dc;
+}
+
+.parent-container > div:nth-child(odd){
+    background-color: #ff8474;
+}
+
+
+
+
+
+/* Website Layout */
+
+.parent-website-layout > div {
+    display: flex;
+    justify-content: center; /* horizontal align */
+    align-items: center; /* vertical align */
+
+    text-transform: uppercase;
+}
+
+
+.header, .menu, .content, .footer{
+    font-size: 2em;
+    color: white;
+
+}
+
+.header{
+    background-color: #114e60;
+
+}
+
+.menu{
+    background-color: #fdbaf8;
+}
+
+.content{
+    background-color: #b0efeb;
+}
+
+.footer{
+    background-color: #a35709;
+}
+
+
+/* Advanced Grid Properties */
+
+.parent-advanced-grid{
+    display: grid;
+
+    /* 
+        # auto-fit 
+            > It will try to fit a new grid item whenever 
+              there is enough space 
+
+        WEIRD CASE
+          In this case we land at the weird case, where 
+          an ample amount is left vacant at the right side 
+          of last item of grid row 
+
+          THIS DOESN'T LOOK GOOD !!!
+
+        # minmax()
+            > It can be used to set the grid item to occupy 
+              100px width only when there is exact space 
+              available to fit the items 
+              
+              ELSE 
+                Distribute the remaining space among the grid
+
+        # IMPLICIT ROWS 
+            > It specifies the size of an implicitly-created
+              grid row track or pattern of tracks
+
+            > grid-auto-rows: size;
+    */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    
+    /* grid-template-rows: repeat(2, 100px); */
+
+    /* 
+     All rows will be created implicitly and all will 100px
+    */
+    grid-auto-rows: 100px;
+    grid-gap: 3px;
+
+    margin: 1.5em 0;
+}
+
+.child-advanced-grid{
+    color: white;
+    font-size: 2em;
+    
+    /* 
+        To align text to the center horizontally as well as 
+        vertically
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child-advanced-grid:nth-child(odd){
+    background-color: #4dddf0; 
+    
+}
+ 
+.child-advanced-grid:nth-child(4n + 2){
+    background-color: #f34545; 
+    
+}
+
+
+.child-advanced-grid:nth-child(4n + 4){
+    background-color: #f0be36; 
+    
+}
+
+
+/* Perfect Centering */
+.center-grid-container{
+    color: white;
+    outline: 2px solid black;
+
+    height: 500px;
+    width: 800px;
+}
+
+.center-grid-container > div {
+    font-size: 2em;
+
+    /* To align the font to center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-grid-container > div:nth-child(even) {
+    background-color: aquamarine;
+}
+
+.center-grid-container > div:nth-child(odd) {
+    background-color: cadetblue;
+}

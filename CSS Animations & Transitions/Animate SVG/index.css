@@ -1,0 +1,71 @@
+body{
+    text-align: center;
+}
+
+svg{
+    height: 500px;
+    width: 700px;
+}
+
+#left-wheel, #right-wheel{
+    animation: rotate-wheel 2s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#man-bike{
+    animation: rotate-man 700ms infinite  ease-out alternate;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+#hat{
+    animation: bounce 700ms ease-in-out infinite alternate;
+    
+    /* Set the animated element base placement */
+    transform-origin: top;
+
+    /*
+        All transformations defined by the "transform" & 
+        "transform-origin" are relative to the position
+        and dimensions of the reference box of the element
+
+        # transform-box 
+            > It defines the reference box 
+            > Values: 
+                * content-box 
+                * border-box 
+                * fill-box 
+                * stroke-box 
+                * view-box
+    */
+    transform-box: fill-box;
+}
+
+@keyframes rotate-wheel{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-man{
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(20deg);
+    }
+}
+
+@keyframes bounce{
+    from{
+        transform: translateY(0%);
+    }
+
+    to{
+        transform: translateY(40%); 
+    }
+}

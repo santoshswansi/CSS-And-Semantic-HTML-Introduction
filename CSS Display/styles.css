@@ -1,0 +1,53 @@
+/*
+    display property can be :- 
+        1. block 
+                > Takes up full width of the screen
+        
+        2. inline 
+                > Takes minimum space required to fit the 
+                  content 
+                > height, width properties have no effect
+
+        3. inline-block 
+                > Behaves like inline but it can have height,
+                  width
+                
+        4. none 
+                > Makes the element does not exist 
+
+        5. inherit 
+                > Inherits this property from its parent 
+                  element
+*/
+
+body{
+    background-color: #fb3640;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+.block-one{
+    background-color: #194350;  
+}
+
+.block-two{
+    background-color: #845460;
+}
+
+.inline-one{
+    background-color: #206a5d;
+}
+
+.inline-two{
+    background-color: #903749;
+}
+
+.inline-block-one{
+    background-color: #fed049;
+    height: 100px;
+    width: 200px;
+}
+
+.not-exist{
+    display: none;
+}

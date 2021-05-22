@@ -1,0 +1,76 @@
+/*
+    Types of css units :-
+        1. Absolute Units
+            -> px 
+                Relative to the viewing device
+                For low-dpi devices: 1px = 1 device pixel(dot)
+                For high-dpi devices: 1px = multiple device 
+                                            pixel (dot)
+            -> cm 
+
+        2. Relative Units
+            -> %  
+                relative to the parent element
+
+            -> em
+                relative to the font-size of the element
+                (2em = 2 times the current font-size)
+
+            -> rem
+                relative to the font-size of root element
+
+            -> vw
+                relative to the viewport width
+                (10vw =  10% of the viewport width)
+
+            -> vh
+                relative to the viewport height
+                (10vw =  10% of the viewport height)
+*/
+
+body{
+    font-family: sans-serif;
+}
+
+.box{
+    background-color: aqua;
+    margin: 20px;
+}
+
+.parent{
+    font-size: 50px;
+}
+
+
+/* Absolute Units */
+.twenty-pixel{
+    font-size: 20px;
+}
+
+.three-cm{
+    font-size: 3cm;
+}
+
+
+/* Relative Units */
+
+.twenty-percent{
+    font-size: 20%;
+}
+
+.ten-vh{
+    font-size: 10vh;
+}
+
+.ten-vw{
+    font-size: 10vw;
+}
+
+.two-em{
+    font-size: 2em;
+}
+
+.tw0-rem{
+    font-size: 2rem;
+}
+

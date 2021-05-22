@@ -1,0 +1,89 @@
+/* 
+CSS Transitions
+    It allow the property to transition smoothly from one 
+    state to another with the set of properties between the 
+    starting and final states defined by the browser(Implicit 
+    Transitions)
+*/
+
+body{
+    background: rgb(253, 92, 92);
+    
+}
+
+
+.box{
+    background: white;
+    height: 50px;
+    width: 50px;
+    margin: 50px;
+    opacity: 0.5;
+    border-radius: 5px;
+    box-shadow: -5px 5px rgb(202, 202, 202, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    /* 
+    # transition-duration
+        > ms(preferred) 
+    */
+    /* transition-duration: 250ms; */
+
+    /*
+    # transition-property 
+
+        > To specify the specific property we want to 
+          transition
+        
+        # NOTE: avoid 'all' (b/c cpu intensive task) 
+    */
+    /* transition-property: opacity, transform; */
+
+    /* 
+    # transition-timing-function
+        > ease-in ---> start slow 
+        > ease-out ---> end slow
+        > ease-in-out ---> start slow / end slow 
+        
+        
+        NOTE: use web dev tool to find the right 
+              transition-timing-function 
+
+    */
+    /* transition-timing-function: ease-in; */
+
+    
+    /* 
+    # transition-delay:
+        > Delay specified ms/s
+    */
+
+    /*
+    # transition 
+        > short hand for all transition property
+        > [property] [duration] [delay] [timing-function]   
+    */
+
+    /* 
+    transition: opacity 250ms, 
+                transform 300ms; 
+    */
+    transition: opacity, transform 250ms;
+}
+
+.line{  
+    background: black;
+    height: 2px;
+    width: 50%;
+}
+
+.box:hover{
+    opacity: 1;
+}
+
+.box:active{
+    transform: rotate(45deg);  
+}

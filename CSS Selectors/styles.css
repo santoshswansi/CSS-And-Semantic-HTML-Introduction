@@ -1,0 +1,172 @@
+/*
+    SYNTAX:
+
+    selector {
+        property-1: value-1;
+        property-2: value-2;
+    }
+*/
+
+/* 
+    SELECTORS: They can be used to select HTML element and
+               manipulate them
+
+    SPECIFICITY: Inline Styles > Id Selector > Class Selector 
+                    > Element Selector    
+
+*/
+
+
+/* To select all elements */
+* {
+    padding: auto;
+}
+
+
+/* Element Selector : For multiple elements of same type */
+body{
+    background-color: #a799b7;
+}
+
+/* Class Selector : For multiple elements of same style*/
+.item {
+    text-decoration: underline;
+}
+
+/* Id Selector : For Specific Element*/
+#header {
+    color: white;
+}
+
+#list {
+    display: none;
+    background-color: white;
+    padding: 20px;
+}
+
+
+/*
+    Pseudo-Classes:
+        Pseudo-class is a keyword added to a selector that
+        specifies a special state of the selected element(s)
+
+*/
+
+
+div:hover #list{
+    display: block;
+}
+
+/* nth-child(n), only-child, etc*/
+/*  
+    ul:first-child{
+        color: 'blue';
+    } 
+*/
+
+/* 
+    unvisited link: 
+    #google-link:link{
+        color: "green";
+    }
+
+    Visited Link 
+    #google-link:visited{
+        color: "red";
+    } 
+*/
+
+/* 
+    PSEUDO ELEMENTS:
+        It is used to style specified parts of an element
+
+    EXAMPLE:
+        > Style the first letter, or line, of an element
+        > Insert content before, or after, the content of
+          an element
+*/
+
+/* ::before */
+h1::after {
+    content: "!!!"
+}
+
+/* Capitalize the first Letter of heading */
+/* ::first-line */
+h1::first-letter{
+    color: #ff0000;
+    font-size: 200%;
+}
+
+/* Styling markers of list items*/
+::marker {
+    color: 'red';
+    font-size: 12px;
+}
+
+
+/*
+    CSS Combinators:
+        It is something that explains the relationship between
+        the selectors
+
+    TYPES: 
+        1. descendant selector (space)
+
+        2. child selector (>) 
+                Selects all child elements
+
+        3. adjacent sibling selector (+)  
+                Selects siblings(Next to each other)
+
+        4. general sibling selector (~) 
+                Selects siblings
+    
+*/
+
+/* Selects Every li element inside ul */
+ul li {
+  color: black;
+  font-size: 24px;
+}
+
+/* 
+    ATTRIBUTE SELECTORS
+        Select specific HTML element that have specific 
+        attribute    
+*/
+
+/* 
+    Selects all li element with attribute = class and its
+    value = "item"
+    NOTE: The value has to be a whole word
+*/
+li[class="item"]{
+    padding: 10px;
+}
+
+/* Selects li element whose class attribute's value contains 
+    specific word = "item"
+    NOTE: The value does not have to be a whole word
+*/
+li[class~="item"]{
+    padding: 10px;
+}
+
+
+/* 
+    Selects li elements, class name starts with "item"
+    NOTE: The value does not have to be a full word
+*/
+li[class^="item"]{
+    padding: 10px;
+}
+
+/*
+    Selects li elements, class name ends with "item"
+    NOTE: The value does not have to be a full word 
+*/
+li[class$="item"]{
+    padding: 10px;
+}
+
